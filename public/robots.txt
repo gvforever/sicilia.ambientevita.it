@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /it/coordinate
+Disallow: /fr/coordinate
+Disallow: /en/coordinate
+Disallow: /de/coordinate
+Disallow: /api/
