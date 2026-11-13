@@ -16,7 +16,7 @@ export const PAGES: Record<string, Page> = {
       en: 'An ancient Pantelleria example of sustainable development.',
       de: 'Ein uraltes Beispiel nachhaltiger Entwicklung aus Pantelleria.',
     },
-    author: 'Giuseppe Sechi — Segretario Provincia Trapani di Ambiente e/è Vita',
+    author: 'Giuseppe Gaetano Sechi — Segretario Provincia Trapani di Ambiente e/è Vita',
     image: IMG.mare,
     body: { it: ASSOCIAZIONE_IT },
   },
