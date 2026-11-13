@@ -2,13 +2,13 @@ export const ASSOCIAZIONE_IT = `«Ancora adesso mi viene da sorridere quando un 
 
 ## Introduzione
 
-Non cose nuove da sapere ma antiche cose da fare. Con queste parole potrei sintetizzare il significato del percorso culturale di Ambiente e/è Vita sull'isola di Pantelleria, intenta sin dal 1996 a ricercare nel passato pantesco la saggezza del fare. Così abbiamo iniziato quest’avventura, trattando le migliori lezioni sulla storia di Pantelleria, raccontataci direttamente da appassionati studiosi di cose pantesche.
+Non cose nuove da sapere ma antiche cose da fare. Con queste parole potrei sintetizzare il significato del percorso culturale di AmbienteVita sull'isola di Pantelleria, intenta sin dal 1996 a ricercare nel passato pantesco la saggezza del fare. Così abbiamo iniziato quest’avventura, trattando le migliori lezioni sulla storia di Pantelleria, raccontataci direttamente da appassionati studiosi di cose pantesche.
 
 Dopo la prima edizione del "Centro studi sul Mediterraneo", nell’agosto del 1997, dal titolo Pantelleria, la sua storia e il suo castello, il compito dell’associazione era quello di dare continuità a questa semplice idea: incontrarsi a Pantelleria per parlare di Mediterraneo e delle culture araba e cristiano-occidentale in esso presenti, avviando questo dialogo che l’isola ha sempre interpretato nella storia. È una fatale vocazione quella di quest’isola di dover mediare tra le due sponde del mare, dovuta alla centralità mediterranea e dove, volendo citare le parole di Henri Bresc "la situazione geografica e l’evoluzione politica e culturale…fanno di Pantelleria un ponte, o, meglio una marca, zona di penetrazione di scambio, di compromesso tra Sicilia e Maghreb".
 
 Una storia che non può che partire dalla cultura che i panteschi hanno rappresentato nel Mediterraneo attraverso i dammusi e le colture di zibibbo e capperi terrazzate lungo i pendii delle khuddie, nati dal sincretistico rapporto dicotomico tra le civiltà dominanti il Mediterraneo. L’uomo che per la prima volta riuscì ad arrivare sull’isola di Pantelleria, trovò un vulcano forse non ancora spento, la cui natura si mostrò ostile sotto tutti i punti di vista. E allora perché quest’uomo ha iniziato l’immane lavoro di bonifica del vulcano, per avere il giardino verdeggiante che tutti noi oggi ammiriamo? Dopo tanto lavoro, chi e che cosa ha fatto dire a quest’uomo: "ne è valsa la pena"?
 
-A queste domande bisognava rispondere a chi come Ambiente e/è Vita spera ancora nell’Uomo, artefice del proprio destino ma non per questo bandito come criminale dalle leggi di tutela ambientale italiane (art.2, comma 3, L.R.98/81), ormai culturalmente obsolete. L’uomo è e si deve sentire soggetto attivo e centrale del suo ambiente per una nuova coscienza di libertà ecologica, il cui pensare in positivo, senza allarmismi e catastrofismi, sarà la nuova filosofia nell’era della New Ecology.
+A queste domande bisognava rispondere a chi come AmbienteVita spera ancora nell’Uomo, artefice del proprio destino ma non per questo bandito come criminale dalle leggi di tutela ambientale italiane (art.2, comma 3, L.R.98/81), ormai culturalmente obsolete. L’uomo è e si deve sentire soggetto attivo e centrale del suo ambiente per una nuova coscienza di libertà ecologica, il cui pensare in positivo, senza allarmismi e catastrofismi, sarà la nuova filosofia nell’era della New Ecology.
 
 È questo il piano culturale, completamente diverso dal conformismo diffuso delle più note associazione ambientaliste italiane, che ho sviluppato nel mio intervento in "Pantelleria e il Mediterraneo" il 16 luglio del 2000 al castello di Pantelleria. Partendo dalle tradizioni, dalla storia e dal passato di quest’isola, ho voluto spiegare perché questo uomo va salvato e il suo ambiente, squisitamente agricolo, valorizzato.
 
@@ -28,7 +28,7 @@ Riconoscere questa cultura, significa fare giustizia delle molteplici incomprens
 
 Questa semplice verità mi fa comprendere l’unica lezione che ci viene dall’insegnamento della storia che saggiamente ci consiglia di fare antiche cose, emulando l’atavico e virtuoso percorso storico dell’uomo pantesco che ha lottato contro la natura per la valorizzazione delle proprie ed uniche risorse naturali. Uomini che hanno ravvisato nel Mediterraneo, la causa di tale colossale impresa. Il mare questo Mare Mediterraneo è stato, è e sarà la causa che ci farà dire oggi, come allora, dopo tutto, dopo tanto sudore, ne è valsa la pena.
 
-Giuseppe Sechi — Segretario Provincia Trapani di Ambiente e/è Vita`;
+Giuseppe Sechi — Segretario Provincia Trapani di AmbienteVita`;
 
 export const ASINO_IT = `## L'Asino di Pantelleria
 

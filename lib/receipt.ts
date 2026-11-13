@@ -23,8 +23,8 @@ export async function buildReceiptPdf(s: any): Promise<Uint8Array> {
   line(`N. ${s.receipt_number}   —   Data: ${new Date(s.created_at).toLocaleDateString('it-IT')}`);
   y -= 10;
   line('Ente ricevente', bold);
-  line('Associazione Siciliana di Ambiente e/è Vita');
-  line('Ramo regionale di Ambiente e/è Vita ETS — C.F. 97119940589');
+  line('Associazione Siciliana di AmbienteVita');
+  line('Ramo regionale di AmbienteVita ETS — C.F. 97119940589');
   line('Pantelleria (TP) — sicilia.ambientevita.it');
   y -= 10;
   line('Donatore', bold);

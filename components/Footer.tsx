@@ -5,7 +5,7 @@ export default function Footer({ lang }: { lang: Lang }) {
     <footer><div className="container">
       <p><strong>AmbienteVita Sicilia</strong> — {d.tagline}</p>
       <p>Pantelleria (TP) · <a href="mailto:sicilia@ambientevita.it">sicilia@ambientevita.it</a> · <a href="https://www.ambientevita.it">{d.footer.national}</a></p>
-      <p>© {new Date().getFullYear()} Associazione Siciliana di Ambiente e/è Vita. {d.footer.rights}</p>
+      <p>© {new Date().getFullYear()} Associazione Siciliana di AmbienteVita. {d.footer.rights}</p>
     </div></footer>
   );
 }

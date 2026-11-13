@@ -22,7 +22,7 @@ export default function Header({ lang }: { lang: Lang }) {
   return (
     <header className={open ? 'open' : ''}><div className="container bar">
       <Link href={`/${lang}`} className="brand">
-        <img src="https://www.ambientevita.it/images/Logo_Ambiente_e_Vita.webp" alt="Ambiente e/è Vita" />
+        <img src="https://www.ambientevita.it/images/Logo_Ambiente_e_Vita.webp" alt="AmbienteVita" />
         <div><strong>AmbienteVita Sicilia</strong><br /><small>{d.tagline}</small></div>
       </Link>
       <button className="burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(o => !o)}><span /><span /><span /></button>

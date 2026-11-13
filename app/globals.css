@@ -12,8 +12,8 @@ h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); margin: 0 0 18px; }
 a { color: var(--sea); }
 .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .22em; font-size: .78rem; color: var(--ochre); font-weight: 600; }
-header { position: fixed; inset: 0 0 auto 0; z-index: 50; color: #fff; transition: background .6s, box-shadow .6s; }
-html[data-scrolled='1'] header { background: rgba(250,248,243,.93); backdrop-filter: blur(12px); color: var(--text); box-shadow: 0 6px 30px rgba(0,0,0,.08); }
+header { position: fixed; inset: 0 0 auto 0; z-index: 50; color: var(--text); background: rgba(250,248,243,.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 2px 16px rgba(0,0,0,.06); }
+/* en-tête fixe, même couleur partout */
 .bar { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
 .brand img { height: 46px; background: #fff; border-radius: 50%; padding: 4px; }

@@ -8,7 +8,7 @@ const it = {
   tagline: "L'uomo al centro del sistema ambiente",
   home: {
     title: 'AmbienteVita Sicilia',
-    lead: "Il ramo siciliano dell'associazione nazionale Ambiente e/è Vita è attivo e presente su tutto il territorio regionale.",
+    lead: "Il ramo siciliano dell'associazione nazionale AmbienteVita è attivo e presente su tutto il territorio regionale.",
     presidentTitle: 'Il messaggio del presidente regionale',
     president: "«La nostra attività non si è mai fermata. Da Pantelleria a tutta la Sicilia, stiamo preparando un nuovo slancio per il 2027: nuovi progetti, nuove adesioni, la stessa passione per l'uomo e il suo ambiente.» — Giuseppe Sechi, presidente regionale, Pantelleria",
     provincesTitle: 'Presenti in tutte le province',
@@ -39,7 +39,7 @@ const fr: typeof it = {
   tagline: "L'homme au centre du système environnement",
   home: {
     title: 'AmbienteVita Sicilia',
-    lead: "La branche sicilienne de l'association nationale Ambiente e/è Vita est active et présente sur tout le territoire régional.",
+    lead: "La branche sicilienne de l'association nationale AmbienteVita est active et présente sur tout le territoire régional.",
     presidentTitle: 'Le message du président régional',
     president: "« Notre activité ne s'est jamais arrêtée. De Pantelleria à toute la Sicile, nous préparons un nouvel élan pour 2027 : de nouveaux projets, de nouveaux membres, la même passion pour l'homme et son environnement. » — Giuseppe Sechi, président régional, Pantelleria",
     provincesTitle: 'Présents dans toutes les provinces',
@@ -70,7 +70,7 @@ const en: typeof it = {
   tagline: 'Mankind at the heart of the environment',
   home: {
     title: 'AmbienteVita Sicilia',
-    lead: 'The Sicilian branch of the national association Ambiente e/è Vita is active throughout the whole region.',
+    lead: 'The Sicilian branch of the national association AmbienteVita is active throughout the whole region.',
     presidentTitle: "The regional president's message",
     president: '“Our work has never stopped. From Pantelleria to all of Sicily, we are preparing a fresh start for 2027: new projects, new members, the same passion for people and their environment.” — Giuseppe Sechi, regional president, Pantelleria',
     provincesTitle: 'Present in every province',
@@ -101,7 +101,7 @@ const de: typeof it = {
   tagline: 'Der Mensch im Mittelpunkt der Umwelt',
   home: {
     title: 'AmbienteVita Sicilia',
-    lead: 'Der sizilianische Zweig des nationalen Vereins Ambiente e/è Vita ist in der ganzen Region aktiv.',
+    lead: 'Der sizilianische Zweig des nationalen Vereins AmbienteVita ist in der ganzen Region aktiv.',
     presidentTitle: 'Die Botschaft des Regionalpräsidenten',
     president: '„Unsere Arbeit hat nie aufgehört. Von Pantelleria bis in ganz Sizilien bereiten wir einen neuen Aufbruch für 2027 vor: neue Projekte, neue Mitglieder, dieselbe Leidenschaft für den Menschen und seine Umwelt.“ — Giuseppe Sechi, Regionalpräsident, Pantelleria',
     provincesTitle: 'In allen Provinzen vertreten',
@@ -133,7 +133,7 @@ export const t = (lang: Lang) => dict[lang];
 export const PROVINCES = ['Agrigento', 'Caltanissetta', 'Catania', 'Enna', 'Messina', 'Palermo', 'Ragusa', 'Siracusa', 'Trapani (Pantelleria)'];
 
 export const BANK = {
-  holder: 'Associazione Siciliana di Ambiente e/è Vita — sicilia.ambientevita.it',
+  holder: 'Associazione Siciliana di AmbienteVita — sicilia.ambientevita.it',
   iban: 'IT00 X000 0000 0000 0000 0000 000',
   bic: 'XXXXITXXXXX',
   bank: 'Banca di esempio — Pantelleria (TP)',
