@@ -1,53 +1,85 @@
 import Link from 'next/link';
-import { Lang, t, PROVINCES } from '@/lib/i18n';
+import { Lang, t } from '@/lib/i18n';
 import { HERO, IMG } from '@/lib/images';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import Counter from '@/components/Counter';
 import SicilyMap from '@/components/SicilyMap';
+import Preloader from '@/components/Preloader';
+import { SICILIA, PROVS, PANTELLERIA } from '@/lib/province';
+import { SPOTS } from '@/lib/spots';
+import CtaButtons from '@/components/CtaButtons';
 
-const X: Record<Lang, { stats: string[]; map: string; gallery: string[]; credit: string }> = {
-  it: { stats: ['anni di impegno', 'province', 'isole minori'], map: 'La Sicilia e le sue isole', gallery: ['Lago di Venere', 'Arco dell’Elefante', 'Lago di Venere', 'Il mare di Pantelleria'], credit: 'Foto: Wikimedia Commons, licenze Creative Commons.' },
-  fr: { stats: ['ans d’engagement', 'provinces', 'petites îles'], map: 'La Sicile et ses îles', gallery: ['Lac de Vénus', 'Arc de l’Éléphant', 'Lac de Vénus', 'La mer de Pantelleria'], credit: 'Photos : Wikimedia Commons, licences Creative Commons.' },
-  en: { stats: ['years of commitment', 'provinces', 'minor islands'], map: 'Sicily and its islands', gallery: ['Lake of Venus', 'Elephant Arch', 'Lake of Venus', 'The sea of Pantelleria'], credit: 'Photos: Wikimedia Commons, Creative Commons licences.' },
-  de: { stats: ['Jahre Engagement', 'Provinzen', 'kleine Inseln'], map: 'Sizilien und seine Inseln', gallery: ['Venussee', 'Elefantenbogen', 'Venussee', 'Das Meer von Pantelleria'], credit: 'Fotos: Wikimedia Commons, Creative-Commons-Lizenzen.' },
-};
 const d_ = (s: string) => ({ ['--d' as any]: s });
+const FALL = 'linear-gradient(135deg, var(--caper), var(--sea))';
 
 export default function Home({ params }: { params: { lang: Lang } }) {
-  const L = params.lang, d = t(L).home, x = X[L];
+  const L = params.lang, d = t(L).home;
+  const ld = { '@context': 'https://schema.org', '@type': 'NGO', name: 'AmbienteVita Sicilia', url: `https://sicilia.ambientevita.it/${L}`, logo: 'https://www.ambientevita.it/images/Logo_Ambiente_e_Vita.webp', parentOrganization: { '@type': 'Organization', name: 'AmbienteVita', url: 'https://www.ambientevita.it' }, areaServed: 'Sicilia' };
   return (<>
+    <Preloader />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     <HeroSlideshow images={HERO}>
-      <p className="eyebrow reveal">Pantelleria · Sicilia</p>
-      <h1 className="reveal" style={d_('.15s')}>{d.title}</h1>
-      <p className="reveal" style={d_('.3s')}>{d.lead}</p>
-      <p className="reveal" style={d_('.45s')}><Link className="btn" href={`/${L}/sostieni`}>{d.cta}</Link></p>
+      <p className="eyebrow">Sicilia · Isole minori</p>
+      <h1>{d.title}</h1>
+      <p>{d.lead}</p>
+      <p><Link className="btn" href={`/${L}/sostieni`}>{d.cta}</Link></p>
     </HeroSlideshow>
 
     <section><div className="container split">
-      <div className="reveal"><p className="eyebrow">{d.presidentTitle}</p><blockquote className="quote">{d.president}</blockquote></div>
-      <div className="photo reveal" style={d_('.2s')}><img src={IMG.elefante2} alt="Pantelleria" /></div>
+      <div className="reveal">
+        <p className="eyebrow">La nostra isola</p>
+        <h2>{SICILIA.title}</h2>
+        {SICILIA.text.map(p => <p key={p}>{p}</p>)}
+        <p><Link href={`/${L}/natura`}>Scopri i 27 luoghi naturali da proteggere →</Link></p>
+      </div>
+      <div className="reveal" style={d_('.2s')}><blockquote className="quote">{d.president}</blockquote></div>
     </div></section>
 
     <section className="dark"><div className="container stats">
-      <div className="reveal"><Counter to={30} suffix="+" /><span>{x.stats[0]}</span></div>
-      <div className="reveal" style={d_('.15s')}><Counter to={9} /><span>{x.stats[1]}</span></div>
-      <div className="reveal" style={d_('.3s')}><Counter to={15} /><span>{x.stats[2]}</span></div>
+      <div className="reveal"><Counter to={30} suffix="+" /><span>anni di impegno</span></div>
+      <div className="reveal" style={d_('.15s')}><Counter to={9} /><span>province</span></div>
+      <div className="reveal" style={d_('.3s')}><Counter to={27} /><span>luoghi da proteggere</span></div>
     </div></section>
 
     <section className="sand"><div className="container">
       <h2 className="reveal">{d.provincesTitle}</h2>
       <p className="reveal">{d.provincesLead}</p>
-      <SicilyMap title={x.map} />
-      <div className="grid" style={{ marginTop: 40 }}>
-        {PROVINCES.map((p, n) => <div key={p} className="card reveal" style={d_(`${n * 0.08}s`)}><strong>{p}</strong></div>)}
-      </div>
+      <SicilyMap title="La Sicilia e le sue isole" />
+      <p className="choices" style={{ justifyContent: 'center', marginTop: 30 }}>{PROVS.map(p => <a key={p.slug} className="choice" href={`#prov-${p.slug}`}>{p.name}</a>)}</p>
     </div></section>
 
-    <section><div className="container">
-      <div className="gallery">
-        {HERO.map((src, n) => <figure key={src} className="reveal" style={d_(`${n * 0.12}s`)}><img src={src} alt={x.gallery[n]} /><figcaption>{x.gallery[n]}</figcaption></figure>)}
-      </div>
-      <p className="credit">{x.credit}</p>
+    {PROVS.map((p, n) => {
+      const spots = SPOTS.filter(s => s.prov === p.name);
+      return (
+        <section key={p.slug} id={`prov-${p.slug}`} className={n % 2 ? 'sand' : ''} style={{ scrollMarginTop: 80 }}>
+          <div className="container">
+            <p className="eyebrow">Provincia di {p.name}</p>
+            <h2 className="reveal">{p.title}</h2>
+            <div className="split" style={{ alignItems: 'start' }}>
+              <div className="reveal">
+                {p.text.map(x => <p key={x}>{x}</p>)}
+                {p.slug === 'trapani' && <div className="card" style={{ marginTop: 20 }}>
+                  <h3 style={{ marginTop: 0 }}>{PANTELLERIA.title}</h3>
+                  <p>{PANTELLERIA.text}</p>
+                  <p><Link href={`/${L}/asino`}>L’asino di Pantelleria</Link> · <Link href={`/${L}/luoghi/lago-di-venere`}>Lago di Venere</Link> · <Link href={`/${L}/luoghi/arco-dell-elefante`}>Arco dell’Elefante</Link> · <Link href={`/${L}/archeologia`}>Archeologia</Link></p>
+                </div>}
+              </div>
+              <div className="reveal" style={d_('.15s')}>
+                {p.photos.map(ph => <figure key={ph.alt} style={{ margin: '0 0 14px', borderRadius: 18, overflow: 'hidden', aspectRatio: '16/10', background: `url("${ph.src}") center/cover, ${FALL}`, position: 'relative' }}><figcaption style={{ position: 'absolute', left: 14, bottom: 10, color: '#fff', fontWeight: 600, textShadow: '0 2px 10px rgba(0,0,0,.6)' }}>{ph.alt}</figcaption></figure>)}
+                <div className="card"><strong>Natura da proteggere</strong>
+                  <ul style={{ margin: '10px 0 0', paddingLeft: 18 }}>{spots.map(s => <li key={s.name}><Link href={`/${L}/natura#${p.slug}`}>{s.name}</Link></li>)}</ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    })}
+
+    <section className="dark"><div className="container" style={{ textAlign: 'center' }}>
+      <h2>Proteggiamo insieme la Sicilia</h2>
+      <p>Diventa socio, partecipa a un evento o sostieni i nostri progetti.</p>
+      <CtaButtons lang={L} dark />
     </div></section>
   </>);
 }

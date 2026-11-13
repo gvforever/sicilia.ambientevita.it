@@ -1,8 +1,6 @@
 User-agent: *
-Disallow: /it/coordinate
-Disallow: /fr/coordinate
-Disallow: /en/coordinate
-Disallow: /de/coordinate
+Allow: /
+Disallow: /*/coordinate
 Disallow: /api/
-
+Disallow: /admin
 Sitemap: https://sicilia.ambientevita.it/sitemap.xml

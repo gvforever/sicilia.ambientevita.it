@@ -10,7 +10,8 @@ export default function Effects() {
     document.querySelectorAll('.reveal, .map').forEach(el => io.observe(el));
     const photos = Array.from(document.querySelectorAll<HTMLElement>('.photo img'));
     const onScroll = () => {
-      root.dataset.scrolled = window.scrollY > 60 ? '1' : '0';
+      const y = window.scrollY, last = Number(root.dataset.ly || 0);
+      if (Math.abs(y - last) > 6) { root.dataset.hide = y > 140 && y > last ? '1' : '0'; root.dataset.ly = String(y); }
       photos.forEach(img => {
         const r = img.parentElement!.getBoundingClientRect();
         img.style.setProperty('--py', `${((r.top + r.height / 2 - innerHeight / 2) / innerHeight) * -40}px`);
