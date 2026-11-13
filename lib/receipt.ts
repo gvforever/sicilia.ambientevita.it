@@ -17,7 +17,7 @@ export async function buildReceiptPdf(s: any): Promise<Uint8Array> {
   const line = (txt: string, f = font, size = 11, color = rgb(0.1, 0.1, 0.1)) => { page.drawText(txt, { x: 50, y, size, font: f, color }); y -= size + 8; };
 
   page.drawRectangle({ x: 0, y: 800, width: 595, height: 42, color: green });
-  page.drawText('Ambiente e/è Vita Sicilia', { x: 50, y: 815, size: 16, font: bold, color: rgb(1, 1, 1) });
+  page.drawText('AmbienteVita Sicilia', { x: 50, y: 815, size: 16, font: bold, color: rgb(1, 1, 1) });
 
   line('RICEVUTA DI EROGAZIONE LIBERALE', bold, 15, green);
   line(`N. ${s.receipt_number}   —   Data: ${new Date(s.created_at).toLocaleDateString('it-IT')}`);

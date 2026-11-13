@@ -4,3 +4,5 @@ Disallow: /fr/coordinate
 Disallow: /en/coordinate
 Disallow: /de/coordinate
 Disallow: /api/
+
+Sitemap: https://sicilia.ambientevita.it/sitemap.xml

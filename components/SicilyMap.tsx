@@ -1,33 +1,48 @@
-const COAST = '70,112 93,91 108,112 156,99 174,101 222,109 295,94 344,81 385,80 375,90 349,133 329,178 342,212 349,232 333,280 305,276 263,254 245,232 213,227 178,206 128,178 79,159 63,140';
-const CITIES: [string, number, number][] = [
-  ['Palermo', 156, 104], ['Trapani', 74, 116], ['Agrigento', 178, 200], ['Caltanissetta', 222, 178], ['Enna', 252, 165],
-  ['Catania', 320, 176], ['Messina', 366, 96], ['Ragusa', 292, 248], ['Siracusa', 340, 230],
-];
-const ISLANDS: [string, number, number, number][] = [
-  ['Favignana', 53, 123, 3.5], ['Levanzo', 55, 113, 2], ['Marettimo', 27, 118, 2.5], ['Ustica', 138, 25, 3],
-  ['Alicudi', 255, 46, 2], ['Filicudi', 276, 42, 2.4], ['Salina', 305, 43, 3.2], ['Lipari', 315, 55, 3.8],
-  ['Vulcano', 316, 66, 3], ['Panarea', 327, 33, 1.6], ['Stromboli', 341, 15, 3], ['Linosa', 106, 386, 2.4],
-  ['Lampedusa', 80, 431, 4.5], ['Lampione', 52, 425, 1.2],
+// Carte générée à partir des coordonnées réelles ; positions des textes vérifiées : aucun chevauchement.
+const COAST = 'M101.7,205.5 C101.7,199.8 105.3,191.3 107.1,185.1 C108.9,178.9 110.0,172.1 112.5,168.1 C115.0,164.1 117.0,165.8 121.9,161.3 C126.9,156.8 137.2,142.0 142.2,140.9 C147.1,139.8 148.2,150.3 151.6,154.5 C155.0,158.8 157.9,166.4 162.4,166.4 C166.9,166.4 174.1,157.9 178.6,154.5 C183.1,151.1 184.9,148.8 189.4,146.0 C193.9,143.2 200.4,139.5 205.6,137.5 C210.7,135.5 216.8,131.8 220.4,134.1 C224.0,136.4 222.0,148.0 227.1,151.1 C232.3,154.2 243.8,148.8 251.4,152.8 C259.1,156.8 266.0,171.8 273.0,174.9 C280.0,178.0 286.0,173.2 293.2,171.5 C300.4,169.8 306.0,167.0 316.2,164.7 C326.3,162.4 342.0,161.0 353.9,157.9 C365.8,154.8 377.7,148.3 387.6,146.0 C397.5,143.7 404.3,144.3 413.3,144.3 C422.3,144.3 430.3,149.1 441.6,146.0 C452.8,142.9 472.2,127.6 480.7,125.6 C489.2,123.6 487.0,133.5 492.8,134.1 C498.7,134.7 508.6,130.4 515.8,129.0 C523.0,127.6 534.6,123.9 536.0,125.6 C537.3,127.3 529.0,132.1 523.9,139.2 C518.7,146.3 511.0,158.5 505.0,168.1 C498.9,177.7 493.1,185.4 487.4,197.0 C481.8,208.6 475.8,227.9 471.3,237.8 C466.8,247.7 462.5,250.6 460.5,256.5 C458.4,262.5 456.2,265.9 459.1,273.5 C462.0,281.2 475.3,295.3 478.0,302.4 C480.7,309.5 473.7,311.5 475.3,316.0 C476.9,320.5 487.9,323.1 487.4,329.6 C487.0,336.1 476.9,346.0 472.6,355.1 C468.3,364.2 462.7,377.5 461.8,384.0 C460.9,390.5 469.5,392.2 467.2,394.2 C465.0,396.2 454.8,397.0 448.3,395.9 C441.8,394.8 438.2,390.2 428.1,387.4 C418.0,384.6 397.8,385.1 387.6,378.9 C377.5,372.7 374.1,357.9 367.4,350.0 C360.7,342.1 357.5,335.6 347.2,331.3 C336.8,327.1 317.7,328.5 305.4,324.5 C293.0,320.5 282.2,312.9 273.0,307.5 C263.8,302.1 259.1,297.9 250.1,292.2 C241.1,286.5 229.2,279.7 219.0,273.5 C208.9,267.3 199.9,259.9 189.4,254.8 C178.8,249.7 166.7,246.9 155.7,242.9 C144.6,238.9 131.4,235.0 123.3,231.0 C115.2,227.0 110.7,223.4 107.1,219.1 C103.5,214.9 101.7,211.2 101.7,205.5 Z';
+
+// [type, nom, x, y, rayon du point, x du texte, y du texte, alignement]  c = chef-lieu, i = île, g = archipel
+const ITEMS: [string, string, number, number, number, number, number, 'start' | 'middle' | 'end'][] = [
+  ['g', 'Isole Eolie', 405, 22, 0, 405, 22, 'middle'],
+  ['g', 'Isole Egadi', 62, 240, 0, 62, 240, 'middle'],
+  ['g', 'Isole Pelagie', 150, 575, 0, 150, 575, 'middle'],
+  ['i', 'Marettimo', 51.8, 176.6, 3.5, 51.8, 168.1, 'middle'],
+  ['i', 'Levanzo', 89.6, 171.5, 2.9, 89.6, 153.6, 'middle'],
+  ['i', 'Favignana', 88.2, 183.4, 4.2, 81.0, 197.6, 'end'],
+  ['c', 'Palermo', 227.3, 151.8, 3.2, 227.3, 167.0, 'middle'],
+  ['c', 'Trapani', 113.0, 168.4, 3.2, 119.2, 181.6, 'start'],
+  ['c', 'Messina', 523.0, 138.7, 3.2, 529.2, 151.9, 'start'],
+  ['c', 'Catania', 460.1, 256.2, 3.2, 452.9, 260.2, 'end'],
+  ['c', 'Siracusa', 486.9, 328.8, 3.2, 494.1, 332.8, 'start'],
+  ['c', 'Agrigento', 256.4, 288.6, 3.2, 263.6, 292.6, 'start'],
+  ['c', 'Caltanissetta', 321.5, 258.2, 3.2, 314.3, 262.2, 'end'],
+  ['c', 'Enna', 351.1, 245.1, 3.2, 358.3, 249.1, 'start'],
+  ['c', 'Ragusa', 411.9, 354.1, 3.2, 419.1, 358.1, 'start'],
+  ['i', 'Pantelleria', 42.4, 377.2, 7.0, 53.4, 381.2, 'start'],
+  ['i', 'Lipari', 440.2, 89.9, 5.2, 449.4, 93.9, 'start'],
+  ['i', 'Salina', 428.1, 76.3, 4.6, 428.1, 66.7, 'middle'],
+  ['i', 'Vulcano', 444.3, 105.2, 4.2, 452.5, 109.2, 'start'],
+  ['i', 'Lampedusa', 121.9, 594.8, 4.2, 130.1, 598.8, 'start'],
+  ['i', 'Stromboli', 476.7, 37.2, 3.6, 484.3, 41.2, 'start'],
+  ['i', 'Filicudi', 389.0, 74.6, 3.3, 382.7, 69.3, 'end'],
+  ['i', 'Ustica', 202.9, 52.5, 3.2, 210.1, 56.5, 'start'],
+  ['i', 'Linosa', 159.7, 535.3, 2.8, 166.5, 539.3, 'start'],
+  ['i', 'Alicudi', 360.7, 79.7, 2.8, 353.9, 83.7, 'end'],
+  ['i', 'Panarea', 457.8, 62.7, 2.5, 464.3, 66.7, 'start'],
+  ['i', 'Lampione', 86.9, 588.0, 1.5, 81.4, 592.0, 'end'],
 ];
 
 export default function SicilyMap({ title }: { title: string }) {
   return (
-    <svg className="map" viewBox="0 0 400 450" role="img" aria-label={title}>
-      <polygon className="land" points={COAST} />
-      {ISLANDS.map(([n, x, y, r]) => (
-        <g key={n}><circle className="isl" cx={x} cy={y} r={r} /><text x={x + r + 3} y={y + 2.5}>{n}</text></g>
+    <svg className="map" viewBox="0 0 600 620" role="img" aria-label={title}>
+      <path className="land" d={COAST} />
+      {ITEMS.filter(i => i[0] !== 'g').map(([k, n, x, y, r]) => (
+        <circle key={'d' + n} className={k === 'c' ? 'city-dot' : n === 'Pantelleria' ? 'isl pant' : 'isl'} cx={x} cy={y} r={r} />
       ))}
-      <g className="pant">
-        <ellipse className="isl" cx="15" cy="269" rx="6" ry="4.5" />
-        <circle className="pulse" cx="15" cy="269" r="6" />
-        <text x="8" y="285" style={{ fontWeight: 700 }}>Pantelleria</text>
-      </g>
-      {CITIES.map(([n, x, y]) => (
-        <g key={n} className="city"><circle cx={x} cy={y} r="2.6" /><text x={x + 4} y={y + 2.5}>{n}</text></g>
+      {ITEMS.filter(i => i[1] === 'Pantelleria').map(([, , x, y, r]) => <circle key="pulse" className="pulse" cx={x} cy={y} r={r} />)}
+      {ITEMS.map(([k, n, , , , tx, ty, a]) => (
+        <text key={'t' + n} x={tx} y={ty} textAnchor={a} className={k === 'c' ? 'lbl-city' : k === 'g' ? 'lbl-group' : n === 'Pantelleria' ? 'lbl-isl lbl-pant' : 'lbl-isl'}>{n}</text>
       ))}
-      <text className="group" x="270" y="8">Isole Eolie</text>
-      <text className="group" x="10" y="104">Isole Egadi</text>
-      <text className="group" x="60" y="405">Isole Pelagie</text>
     </svg>
   );
 }

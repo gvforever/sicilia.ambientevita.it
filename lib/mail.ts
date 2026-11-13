@@ -8,7 +8,7 @@ export async function sendMails(s: any, pdf?: Uint8Array) {
   await resend.emails.send({ from: process.env.MAIL_FROM!, to: process.env.MAIL_TO!, subject: `Nuova adesione/donazione #${s.id}`, text: summary, attachments });
   await resend.emails.send({
     from: process.env.MAIL_FROM!, to: s.email,
-    subject: 'Grazie dal ramo siciliano di Ambiente e/è Vita',
+    subject: 'Grazie da AmbienteVita Sicilia',
     text: `Grazie ${s.first_name}!\n\n${summary}\n\nCompleta il bonifico indicando la causale AEV-SICILIA-${s.id} ${s.last_name}.`,
     attachments,
   });

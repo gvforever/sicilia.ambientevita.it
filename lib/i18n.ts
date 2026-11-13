@@ -7,7 +7,7 @@ const it = {
   nav: { home: 'Home', association: "L'associazione", asino: "L'asino di Pantelleria", convegno: 'Convegno 2000', archeologia: 'Archeologia', support: 'Sostienici' },
   tagline: "L'uomo al centro del sistema ambiente",
   home: {
-    title: 'Ambiente e/è Vita Sicilia',
+    title: 'AmbienteVita Sicilia',
     lead: "Il ramo siciliano dell'associazione nazionale Ambiente e/è Vita è attivo e presente su tutto il territorio regionale.",
     presidentTitle: 'Il messaggio del presidente regionale',
     president: "«La nostra attività non si è mai fermata. Da Pantelleria a tutta la Sicilia, stiamo preparando un nuovo slancio per il 2027: nuovi progetti, nuove adesioni, la stessa passione per l'uomo e il suo ambiente.» — Giuseppe Sechi, presidente regionale, Pantelleria",
@@ -16,7 +16,7 @@ const it = {
     cta: 'Diventa socio o fai una donazione',
   },
   form: {
-    title: 'Sostieni Ambiente e/è Vita Sicilia',
+    title: 'Sostieni AmbienteVita Sicilia',
     membership: 'Adesione', none: 'Nessuna adesione, solo donazione', ordinario: 'Socio ordinario — 10 € / anno', benemerito: 'Socio benemerito — 200 € / anno',
     donation: 'Donazione libera', noDonation: 'Nessuna', custom: 'Altro importo (€)',
     firstName: 'Nome', lastName: 'Cognome', email: 'E-mail', phone: 'Telefono', address: 'Indirizzo completo', taxCode: 'Codice fiscale',
@@ -38,7 +38,7 @@ const fr: typeof it = {
   nav: { home: 'Accueil', association: "L'association", asino: "L'âne de Pantelleria", convegno: 'Conférence 2000', archeologia: 'Archéologie', support: 'Nous soutenir' },
   tagline: "L'homme au centre du système environnement",
   home: {
-    title: 'Ambiente e/è Vita Sicile',
+    title: 'AmbienteVita Sicilia',
     lead: "La branche sicilienne de l'association nationale Ambiente e/è Vita est active et présente sur tout le territoire régional.",
     presidentTitle: 'Le message du président régional',
     president: "« Notre activité ne s'est jamais arrêtée. De Pantelleria à toute la Sicile, nous préparons un nouvel élan pour 2027 : de nouveaux projets, de nouveaux membres, la même passion pour l'homme et son environnement. » — Giuseppe Sechi, président régional, Pantelleria",
@@ -47,7 +47,7 @@ const fr: typeof it = {
     cta: 'Devenir membre ou faire un don',
   },
   form: {
-    title: 'Soutenir Ambiente e/è Vita Sicile',
+    title: 'Soutenir AmbienteVita Sicilia',
     membership: 'Adhésion', none: 'Pas d’adhésion, don seulement', ordinario: 'Membre simple — 10 € / an', benemerito: 'Membre bienfaiteur — 200 € / an',
     donation: 'Don libre', noDonation: 'Aucun', custom: 'Autre montant (€)',
     firstName: 'Prénom', lastName: 'Nom', email: 'E-mail', phone: 'Téléphone', address: 'Adresse complète', taxCode: 'Code fiscal',
@@ -69,7 +69,7 @@ const en: typeof it = {
   nav: { home: 'Home', association: 'The association', asino: 'The Pantelleria donkey', convegno: '2000 Conference', archeologia: 'Archaeology', support: 'Support us' },
   tagline: 'Mankind at the heart of the environment',
   home: {
-    title: 'Ambiente e/è Vita Sicily',
+    title: 'AmbienteVita Sicilia',
     lead: 'The Sicilian branch of the national association Ambiente e/è Vita is active throughout the whole region.',
     presidentTitle: "The regional president's message",
     president: '“Our work has never stopped. From Pantelleria to all of Sicily, we are preparing a fresh start for 2027: new projects, new members, the same passion for people and their environment.” — Giuseppe Sechi, regional president, Pantelleria',
@@ -78,7 +78,7 @@ const en: typeof it = {
     cta: 'Become a member or donate',
   },
   form: {
-    title: 'Support Ambiente e/è Vita Sicily',
+    title: 'Support AmbienteVita Sicilia',
     membership: 'Membership', none: 'No membership, donation only', ordinario: 'Ordinary member — €10 / year', benemerito: 'Patron member — €200 / year',
     donation: 'Free donation', noDonation: 'None', custom: 'Other amount (€)',
     firstName: 'First name', lastName: 'Last name', email: 'Email', phone: 'Phone', address: 'Full address', taxCode: 'Tax code',
@@ -100,7 +100,7 @@ const de: typeof it = {
   nav: { home: 'Startseite', association: 'Der Verein', asino: 'Der Esel von Pantelleria', convegno: 'Tagung 2000', archeologia: 'Archäologie', support: 'Unterstützen' },
   tagline: 'Der Mensch im Mittelpunkt der Umwelt',
   home: {
-    title: 'Ambiente e/è Vita Sizilien',
+    title: 'AmbienteVita Sicilia',
     lead: 'Der sizilianische Zweig des nationalen Vereins Ambiente e/è Vita ist in der ganzen Region aktiv.',
     presidentTitle: 'Die Botschaft des Regionalpräsidenten',
     president: '„Unsere Arbeit hat nie aufgehört. Von Pantelleria bis in ganz Sizilien bereiten wir einen neuen Aufbruch für 2027 vor: neue Projekte, neue Mitglieder, dieselbe Leidenschaft für den Menschen und seine Umwelt.“ — Giuseppe Sechi, Regionalpräsident, Pantelleria',
@@ -109,7 +109,7 @@ const de: typeof it = {
     cta: 'Mitglied werden oder spenden',
   },
   form: {
-    title: 'Ambiente e/è Vita Sizilien unterstützen',
+    title: 'AmbienteVita Sicilia unterstützen',
     membership: 'Mitgliedschaft', none: 'Keine Mitgliedschaft, nur Spende', ordinario: 'Ordentliches Mitglied — 10 € / Jahr', benemerito: 'Fördermitglied — 200 € / Jahr',
     donation: 'Freie Spende', noDonation: 'Keine', custom: 'Anderer Betrag (€)',
     firstName: 'Vorname', lastName: 'Nachname', email: 'E-Mail', phone: 'Telefon', address: 'Vollständige Adresse', taxCode: 'Steuernummer',
