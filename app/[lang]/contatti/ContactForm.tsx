@@ -12,10 +12,13 @@ export default function ContactForm({ lang }: { lang: Lang }) {
     const f = new FormData(e.currentTarget);
     if (!f.get('privacy')) { setState('error'); return; }
     setState('sending');
+    
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ lang, ...Object.fromEntries(f as any) }),
+      });
       setState(res.ok ? 'ok' : 'error');
     } catch { setState('error'); }
   }
