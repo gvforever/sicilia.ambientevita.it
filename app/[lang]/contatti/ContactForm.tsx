@@ -15,8 +15,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
     try {
       const res = await fetch('/api/contact', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lang, ...Object.fromEntries(f.entries()) }),
-      });
+        body: JSON.stringify({ lang, ...Object.fromEntries(f as any) }),
       setState(res.ok ? 'ok' : 'error');
     } catch { setState('error'); }
   }
