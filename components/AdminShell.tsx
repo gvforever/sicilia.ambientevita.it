@@ -15,6 +15,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
       <strong>AmbienteVita · Admin</strong>
       <Link href="/admin">Tableau de bord</Link>
       <Link href="/admin/messaggi">Messages</Link>
+      <Link href="/admin/tessere">Cartes de membre</Link>
       <a href="/api/admin">Export dons (Excel)</a>
       <a href="/api/admin?t=contacts">Export messages</a>
       <Link href="/it" target="_blank">Voir le site</Link>

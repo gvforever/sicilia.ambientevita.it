@@ -5,6 +5,7 @@ import { requireAdmin, fmt, TYPE } from '@/lib/admin';
 import { ensureCardCols, buildCardPdf, finalEnd, provEnd, siteUrl, cardNumber } from '@/lib/card';
 import { signId } from '@/lib/receipt';
 import { send } from '@/lib/mailer';
+import AdminShell from '@/components/AdminShell';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,7 +39,7 @@ export default async function Tessere() {
   const rows = await sql`SELECT * FROM subscriptions ORDER BY created_at DESC`;
   const now = new Date();
   return (
-    <div className="container adm">
+    <AdminShell>
       <h1>Cartes de membre</h1>
       <p>Cochez « Virement reçu », ajoutez une note et la date, puis validez : le membre reçoit sa carte définitive annuelle (PDF et image) par e-mail.</p>
       <div className="tbl-wrap"><table className="tbl">
@@ -67,6 +68,6 @@ export default async function Tessere() {
           );
         })}</tbody>
       </table></div>
-    </div>
+    </AdminShell>
   );
 }
